@@ -150,17 +150,23 @@ nav {
     display: flex;
     flex-wrap:wrap ;
     gap: 20px;
-
+    justify-content: space-between;
+    padding: 20px;
 }
 .box{
-    max-width: 300px;
-    min-height: 400px;
+    max-width: 30rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid #ccc;
     padding: 15px;
     text-align: center;
+}
+
+.popular-img{
+    height: 30rem;
+    width: 100%;
+    border-radius: 50%;
 }
 
 span {
