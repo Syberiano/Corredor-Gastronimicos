@@ -158,7 +158,6 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #ccc;
     padding: 15px;
     text-align: center;
 }
@@ -166,7 +165,7 @@ nav {
 .popular-img{
     height: 30rem;
     width: 100%;
-    border-radius: 50%;
+    border-radius: 45%;
 }
 
 span {
@@ -177,20 +176,6 @@ span {
 }
 .sitios-populares {
     background-color: var(--colorPrimario);
-}
-/*
-.restaurante-fotos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 2rem;
-}
-    
-@media(min-width: 768px) {
-    /*
-    .restaurante-fotos {
-        grid-template-columns: repeat(3, 1fr);
-    }  */
 }
 .popular-img {
     width: 100%;
@@ -232,3 +217,4 @@ span {
     padding: 1rem;
     border-radius: 15%;
 }
+
