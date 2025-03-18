@@ -179,7 +179,7 @@ span {
     grid-template-rows: repeat(1, 1fr);
     gap: 2rem;
 }
-    */
+    
 @media(min-width: 768px) {
     /*
     .restaurante-fotos {
