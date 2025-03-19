@@ -224,3 +224,18 @@ span {
 /*contactanos*/
 
 /*nosotros*/
+@media(min-width: 0px) and ( max-width: 500px) {
+    .nosotrosImg{
+        width: 40%;
+
+    }
+}
+@media(min-width: 501) and (max-width:1200) {
+    .nosotrosImg{
+        width: 50%;
+    }
+}
+@media(min-width: 1201){
+    .nosotrosImg{ 
+        width: 70%;}
+}
