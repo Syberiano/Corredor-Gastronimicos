@@ -228,6 +228,7 @@ li{
     justify-content: center;
     height: 10vh;
 
+
 }
 
 
@@ -251,14 +252,12 @@ font-size: large;
 
 label {
 line-height: 1.9rem;
-font-size: ;
 }
 
 input[type="submit"] {
-transform: translate(2.2%);
-padding: 3px;
-margin-top: 0.6rem;
-font-family: cursive;
+
+padding: 0px;
+margin-top: 0rem;
 font-weight: bold;
 font-size: large 100px;
 }
