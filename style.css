@@ -227,6 +227,10 @@ li{
     align-items: center;
     justify-content: center;
     height: 10vh;
+    justify-content: space-between;
+    .footer{
+        position: fixed;
+    }
 
 
 }
