@@ -21,11 +21,6 @@ main{
     margin-top: 100px;
 }
 
-p {
-    font-size: 1.8rem;
-}
-
-
 .container {
     margin: 0 auto;
 }
@@ -36,7 +31,7 @@ h1,h2,h3 {
     font-family: var(--fuentePrincipal);
 }
 
-h1 {
+/*h1 {
     font-size: 10rem;
     letter-spacing: 0.5rem;
     line-height: 10 rem;
@@ -50,7 +45,7 @@ h2 {
 
 h3 {
     font-size: 2.4rem;
-}
+}*/
 
 footer{
     width: 100%;
@@ -61,6 +56,8 @@ footer{
 .footer__text{
     font-family: var(--fuenteSecundaria);
     font-size: 2.2rem;
+    color:white;
+    padding: 2%;
 }
 
 .Slogan {
@@ -115,6 +112,20 @@ nav {
 main{
     font-size: xx-large;
     font-family: var(--fuenteSecundaria);
+}
+
+.titlePrincipal{
+    color: var(--rojoOscuro);
+    font-size: xx-large;
+    font-weight: 800;
+    font-family: var(--fuenteSecundaria);
+    margin-left: 36.5%;
+}
+
+.titleSecundario{
+    color: var(--rojoOscuro);
+    font-size: x-large;
+    font-weight: 600;
 }
 
 .muchoTexto{
