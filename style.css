@@ -68,9 +68,15 @@ h3 {
     background-color: var(--rojoOscuro);
 }
 
+<!--.footer__text{
+    font-family: var(--fuenteSecundaria);
+    font-size: 2.2rem;
+}-->
 .footer__text{
     font-family: var(--fuenteSecundaria);
     font-size: 2.2rem;
+    color:white;
+    padding: 2%;
 }
 
 .Slogan {
