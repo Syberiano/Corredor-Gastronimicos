@@ -192,7 +192,7 @@ span {
     margin: 1rem;
 }
 
-.popular{
+.popular, .zonas{
     font-size: 4rem;
     padding: 2rem auto;
     margin: 2rem;
@@ -227,6 +227,57 @@ span {
 }
 /*Buscar*/
 
+.buscador {
+    background-color: var(--mostaza);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+.buscador input[type="text"] {
+    width: 50%;
+    padding: 1rem;
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--colorPrimario);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--rojoOscuro);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.6rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hoover);
+    color: var(--colorPrimario);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--hoover);
+}
 
 /*contactanos*/
 li{
