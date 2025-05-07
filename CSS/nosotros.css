@@ -142,7 +142,6 @@ main{
     font-size: xx-large;
     font-weight: 800;
     font-family: var(--fuenteSecundaria);
-    margin-left: 36.5%;
 }
 
 .titleSecundario{
@@ -173,7 +172,7 @@ main{
         margin-left: 25%;
     }
     .muchoTexto{
-        justify-content: right;
+        /*justify-content: right;*/
         padding: 10%;
         font-size: xx-large;
         font-family: var(--fuenteSecundaria);
