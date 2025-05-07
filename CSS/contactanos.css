@@ -14,7 +14,6 @@
 * {
     box-sizing: border-box;
     font-size: 62.5%;
-
 }
 
 body{
@@ -190,7 +189,7 @@ input, textarea{
 }
 */
 form {
-    max-width: 500px;
+    width: 80%;
     margin: 2rem auto;
     padding: 2rem;
     background-color: #f9f9f9;
@@ -205,8 +204,8 @@ form {
   }
   
   legend {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 4rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     text-align: center;
   }
@@ -220,17 +219,19 @@ form {
   label {
     margin-bottom: 0.5rem;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   
   input,
   textarea {
     padding: 0.8rem;
-    height: 3rem;
-    font-weight: 600;
+    height: 10rem;
+    font-size: 20px !important ;
+    font-weight: 500;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     transition: border-color 0.3s;
+    resize: none;
   }
   
   input:focus,
@@ -241,8 +242,8 @@ form {
   
   .submit-btn {
     width: 100%;
-    padding: 1rem;
-    font-size: 1.5rem;
+    padding: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     background-color: var(--rojoOscuro);
     color: white;
@@ -334,6 +335,10 @@ li{
         padding: 5%;
         font-size: x-large;
         font-family: var(--fuenteSecundaria);
+    }
+
+    form{
+        width: 100%;
     }
 
     li{
