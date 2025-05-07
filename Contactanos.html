@@ -34,45 +34,31 @@
 </header>
 <div class="hero-img2"></div>
 <form action="a">
-    <fieldset>
-      <legend>Contacto</legend>
-      <div class="form-control">
-        <label for="name"></label>
-        <input type="name" id="name" placeholder="Introduce tu nombre" required />
-      </div>
+  <fieldset>
+    <legend>Contacto</legend>
 
-      <div class="form-control">
-        <label for="email"></label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Introduce tu Email"
-          required
-        />
-      </div>
-      <div class="form-control">
-        <label for="numero"></label>
-        <input
-          type="number"
-          id="number"
-          placeholder="Introduce tu numero"
-          required
-        />
-      </div>
+    <div class="form-control">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" placeholder="Introduce tu nombre" required />
+    </div>
 
-      <div class="form-control">
-        <label for="message"></label>
-        <textarea
-          id="message"
-          cols="30"
-          rows="10"
-          placeholder="Introduce tu mensaje"
-          required
-        ></textarea>
-      </div>
-      
-      <input type="submit" value="Enviar" class="submit-btn" />
-    </fieldset>
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Introduce tu Email" required />
+    </div>
+
+    <div class="form-control">
+      <label for="number">Número</label>
+      <input type="tel" id="number" name="number" placeholder="Introduce tu número" required />
+    </div>
+
+    <div class="form-control">
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" cols="30" rows="5" placeholder="Introduce tu mensaje" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Enviar</button>
+  </fieldset>
 </form>
 <li class="Contactanosia">
     <ul>
@@ -84,7 +70,7 @@
         
     </ul>
     <ul>
-        <a class="emailicon" href="aqui va el email"><img src="Imagenes/iconos/MdiEmailOpenHeartOutline.svg" alt="" width="100rem" height="100rem" >EMAIL</a>
+        <a class="emailicon" href="aqui va el email"><img src="Imagenes/iconos/MdiEmailOpenHeartOutline.svg" alt="" width="100rem" height="100rem" ></a>
     </ul>
 </li>
 <!-- footer -->

@@ -17,6 +17,10 @@
 
 }
 
+body{
+    background-color: var(--beige);
+}
+
 main{
     margin-top: 100px;
 }
@@ -71,14 +75,6 @@ footer{
     top: 0;
     left: 0;
 }
-
-/*nav {
-    max-width: 992px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}*/
 
 nav {
     display: flex;
@@ -166,41 +162,113 @@ main{
     background-position: center; 
 }
 
-form{
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    
-  
-}
-input,
-textarea {
-width: 700PX;
-padding: 50px;
-outline: none;
-font-size: large;
-}
+/*FORMULARIO*/
+/*
+
+fieldset {
+    padding: 20px 40px;
+    }
+    legend{
+    font-size: large;
+    }
+
 
 label {
 line-height: 1.9rem;
 }
 
 input[type="submit"] {
-
 padding: 0px;
 margin-top: 0rem;
 font-weight: bold;
 font-size: large 100px;
 }
 
-fieldset {
-padding: 20px 40px;
+input, textarea{
+    background-color: #1B5C2F;
+    width: 100%;
 }
-legend{
-font-size: large;
+*/
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+  }
+  
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  legend {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  
+  input,
+  textarea {
+    padding: 0.8rem;
+    height: 3rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: var(--rojoOscuro);
+    outline: none;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--rojoOscuro);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: rgb(4, 92, 4);
+  }
+  
+  @media (max-width: 600px) {
+    form {
+      padding: 1rem;
+    }
+  }
+  
+/*Lista de abajo (las imagenes de las redes)*/
+li{
+    justify-content: center;
+    display: flex;
+    gap: 20%;
 }
+
 /*resoluciones por debajo de 1200px (normalmente tablets)*/
 
 @media(max-width:1199px) {
@@ -266,5 +334,19 @@ font-size: large;
         padding: 5%;
         font-size: x-large;
         font-family: var(--fuenteSecundaria);
+    }
+
+    li{
+        justify-content: center;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-left: 5%;
+    }
+    ul{
+        height: 100px;
+        width: 50px;
+        margin: 0px;
+        padding: 0px;
     }
 }
