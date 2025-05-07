@@ -19,15 +19,19 @@
 <body class="container">
 <!-- Just header -->
  <header class="header">
-
     <nav>
         <a href="index.html">
             <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="" width="10px">
         </a>
-        <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
-        <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
-        <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
-        <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
+        <button class="menu-toggle">
+            <img src="Imagenes/iconos/WhhMenu.png" alt="" height="40px">
+        </button>
+        <div class="nav-links">
+            <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
+            <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
+            <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
+            <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
+        </div>
     </nav>  
 
 </header>
@@ -74,4 +78,13 @@
     <center><font class="footer__text">Todos los derechos reservados - Corredor Gastronomico © 2025</font></center>
     </p>
 </footer>
+
+<script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 </html>
