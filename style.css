@@ -28,8 +28,7 @@ body {
 */
 
 body {
-    width: 100%; /* ← quita el fijo de 1200px */
-    max-width: 1200px; /* si quieres limitarlo */
+    width: 100%; /* ← quita el fijo de 1200px */ /* si quieres limitarlo */
     margin: 0 auto; /* centra si es más estrecho */
     font-size: 1.6rem;
     line-height: 1.5;
@@ -47,7 +46,7 @@ img{
 }
 
 .container {
-    max-width: 120rem;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
 }
@@ -371,4 +370,8 @@ legend{
         max-width: 100%;
     }
     
+    .Slogan {
+        font-family: var(--fuenteSecundaria);
+        font-size: 30px;
+    }
 }
