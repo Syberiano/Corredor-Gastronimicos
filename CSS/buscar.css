@@ -59,6 +59,7 @@ footer{
     font-size: 2.2rem;
     color:white;
     padding: 2%;
+    background-color: greenyellow;
 }
 
 .Slogan {
@@ -73,11 +74,26 @@ footer{
 }
 
 nav {
-    max-width: 992px;
-    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
+
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.menu-toggle {
+    width: auto;
+    color: white;
+    display: none;
+    font-size: large;
+    background-color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .nav__enlace {
@@ -147,10 +163,33 @@ main{
 /*resoluciones por debajo de 1200px (normalmente tablets)*/
 
 @media(max-width:1199px) {
+    /*nav{
+        width: 100%;
+        display: flex;
+    }*/
+
     nav{
         width: 100%;
         display: flex;
     }
+
+    .nav-links{
+        width: 100%;
+        display: flex;
+    }
+    .nosotrosImg{
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
     .nosotrosImg{
         width: 50%;
         margin-left: 25%;
@@ -169,10 +208,25 @@ main{
         width: 50%;
         margin-left: 25%;
     }
-    nav {
+
+    nav{
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: flex;
+        margin-right: 8%;
+        height: 4rem;
+        font-size: large;
     }
     .muchoTexto{
         padding: 5%;

@@ -13,19 +13,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css"> -->
 </head>
 <body class="container">
 <header class="header">
     <nav>
         <a href="index.html">
-            <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="">
+            <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="" width="10px">
         </a>
-        <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
-        <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
-        <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
-        <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
-    </nav> 
+        <button class="menu-toggle">
+            <img src="Imagenes/iconos/WhhMenu.png" alt="" height="40px">
+        </button>
+        <div class="nav-links">
+            <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
+            <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
+            <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
+            <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
+        </div>
+    </nav>  
     <div class="hero-imgbuscar"></div>
 </header>
     <div class="buscador">
@@ -62,10 +67,18 @@
 
 <main>
 </main>
-<footer class="footer">
+<center><footer class="footer">
     <p class="footer__text">"Descubre, disfruta y comparte los sabores del Valle de Aburrá. ¡Tu próxima experiencia gastronómica te espera!"
         <br>
     <center><font class="footer__text">Todos los derechos reservados - Corredor Gastronomico © 2025</font></center>
     </p>
-</footer>
+</footer></center>
+<script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 </html>

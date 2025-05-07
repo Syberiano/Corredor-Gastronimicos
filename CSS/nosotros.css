@@ -51,6 +51,7 @@ footer{
     width: 100%;
     padding: 1rem 0;
     background-color: var(--rojoOscuro);
+    margin: 0px;
 }
 
 .footer__text{
@@ -83,7 +84,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .nav-links {
@@ -181,12 +181,6 @@ main{
         width: 50%;
         margin-left: 25%;
     }
-    .muchoTexto{
-        /*justify-content: right;*/
-        padding: 10%;
-        font-size: xx-large;
-        font-family: var(--fuenteSecundaria);
-    }
 
     .menu-toggle {
         display: none;
@@ -195,6 +189,15 @@ main{
         border: none;
         cursor: pointer;
     }
+    
+    .muchoTexto{
+        /*justify-content: right;*/
+        padding: 10%;
+        font-size: xx-large;
+        font-family: var(--fuenteSecundaria);
+    }
+
+
 }
 
 /*resoluciones por debajo de 700px (normalmente celulares)*/
@@ -206,7 +209,6 @@ main{
 
     nav{
         flex-wrap: wrap;
-
     }
 
     .nav-links {
