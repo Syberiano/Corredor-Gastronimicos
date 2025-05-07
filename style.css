@@ -59,8 +59,9 @@ h2 {
 h3 {
     font-size: 2.4rem;
 }
-/*footer*/
 
+/*footer*/
+/*
 .footer{
     max-width: 100%;
     padding: 1rem 0;
@@ -68,10 +69,23 @@ h3 {
     background-color: var(--rojoOscuro);
 }
 
-<!--.footer__text{
+.footer__text{
     font-family: var(--fuenteSecundaria);
     font-size: 2.2rem;
-}-->
+}
+.footer__text{
+    font-family: var(--fuenteSecundaria);
+    font-size: 2.2rem;
+    color:white;
+    padding: 2%;
+}*/
+footer{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--rojoOscuro);
+    margin: 0px;
+}
+
 .footer__text{
     font-family: var(--fuenteSecundaria);
     font-size: 2.2rem;
