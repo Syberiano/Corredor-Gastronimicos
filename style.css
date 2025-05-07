@@ -16,12 +16,27 @@
     font-size: 62.5%;
 
 }
+/*
 body {
+    max-width: 100%;
     width: 1200px;
     font-size: 1.6rem;
     line-height: 1.5;
     background-color: var(--beige);
+    overflow: hidden;
 }
+*/
+
+body {
+    width: 100%; /* ← quita el fijo de 1200px */
+    max-width: 1200px; /* si quieres limitarlo */
+    margin: 0 auto; /* centra si es más estrecho */
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: var(--beige);
+    overflow-x: hidden; /* solo oculta horizontal */
+}
+
 p {
     font-size: 1.8rem;
 
@@ -49,11 +64,8 @@ h1,h2,h3 {
 }
 
 h1{
-    text-align: center;
-    color: var(--colorPrimario);
-    font-family: var(--fuentePrincipal);
-    text-overflow: "...";
-    font-size: 10rem;
+    background-color: aqua;
+    font-size: 100rem;
     letter-spacing: 0.5rem;
     padding-bottom: 1rem;
     text-align: start;
@@ -80,6 +92,19 @@ footer{
     color:white;
     padding: 2%;
 }
+
+.tituloPrincipal {
+    display: block; /* O inline-block */
+    max-width: 100%; /* O píxeles fijos, ej: 300px */
+    font-family: var(--fuentePrincipal);
+    font-size: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
 
 .Slogan {
     font-family: var(--fuenteSecundaria);
@@ -140,7 +165,7 @@ nav {
 }
 
 .hero-img {
-    margin-top: 10%;
+    margin-top: 100px;
     display: flex;
     height: 80vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Imagenes/Heroe.jpg);
@@ -310,7 +335,7 @@ legend{
 }
 
 /*resoluciones por debajo de 700px (normalmente celulares)*/
-@media(max-width: 700px) {
+@media(max-width: 850px) {
     .nosotrosImg{
         width: 50%;
         margin-left: 25%;
@@ -336,4 +361,14 @@ legend{
         font-size: large;
     }
 
+    .tituloPrincipal {
+        display: block;
+        font-family: var(--fuentePrincipal);
+        font-size: 10vw; /* ← usa viewport width para responsividad */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+    
 }
