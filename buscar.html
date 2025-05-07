@@ -25,7 +25,10 @@
         <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
         <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
         <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
-    </nav>  
+    </nav> 
+    <div>
+        <img src="Imagenes/FormkitTelephone.png" alt="">
+    </div> 
 </header>
     <div class="buscador">
         <h2 class="zonas">Zonas</h2>
@@ -37,6 +40,26 @@
             <option value="oriente">Zona Oriente</option>
             <option value="occidente">Zona Occidente</option>
         </select>
+        <div>
+            <div id="map" style="height: 400px; width: 100%;"></div>
+            <script>
+                function initMap() {
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        center: { lat: 6.2442, lng: -75.5812 }, 
+                        zoom: 12,
+                    });
+
+                    const marker = new google.maps.Marker({
+                        position: { lat: 6.2442, lng: -75.5812 },
+                        map: map,
+                        title: "Medellín",
+                    });
+                }
+            </script>
+            <script async
+                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+            </script>
+        </div>
     </div>
 
 <main>
