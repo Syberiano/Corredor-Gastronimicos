@@ -33,40 +33,34 @@
     </nav>  
     <div class="hero-imgbuscar"></div>
 </header>
-    <div class="buscador">
-        <h2 class="zonas">Zonas</h2>
-        <select class="dropdown" name="zonas" id="zonas">
-            <option value="" disabled selected>Selecciona una zona</option>
-            <option value="norte">Zona Norte</option>
-            <option value="centro">Zona Centro</option>
-            <option value="sur">Zona Sur</option>
-            <option value="oriente">Zona Oriente</option>
-            <option value="occidente">Zona Occidente</option>
-        </select>
-        <div>
-            <div id="map" style="height: 400px; width: 100%;"></div>
-            <script>
-                function initMap() {
-                    const map = new google.maps.Map(document.getElementById("map"), {
-                        center: { lat: 6.2442, lng: -75.5812 }, 
-                        zoom: 12,
-                    });
-
-                    const marker = new google.maps.Marker({
-                        position: { lat: 6.2442, lng: -75.5812 },
-                        map: map,
-                        title: "Medellín",
-                    });
-                }
-            </script>
-            <script async
-                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-            </script>
+<div class="container__buscador">
+    <h2 class="zonas">Zonas</h2>
+        <div class="buscador">
+            <select name="opciones" id="buscar_zona" onchange="actualizarMapa()">
+                <option value="0">Selecciona una zona</option>
+                <option value="1">Poblado</option> 
+                <option value="2">Envigado</option>
+                <option value="3">Sabaneta</option>
+                <option value="4">La Estrella</option>
+                <option value="5">Itagüí</option>
+                <option value="6">Bello</option>
+                <option value="7">Copacabana</option>
+                <option value="8">Barbosa</option>
+                <option value="9">Girardota</option>
+                <option value="10">Caldas</option>
+                <option value="11">Medellín</option>
+            </select>
         </div>
-    </div>
+</div>
+<div id="mapa" style="width: 100%; height: 400px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.69980792949!2d-75.66361397153547!3d6.244367696483319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad05%3A0x42137cfcc7b53b56!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1746922883508!5m2!1ses-419!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<div id="mapaPoblado" style="display: none; margin-top: 20px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.411457044604!2d-75.57026262552118!3d6.209336976735485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428299b5aa6d9%3A0x2020c055ff96b671!2sEl%20Poblado%2C%20Medell%C3%ADn%2C%20El%20Poblado%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1746923004948!5m2!1ses-419!2sco" 
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
 
-<main>
-</main>
 <center><footer class="footer">
     <p class="footer__text">"Descubre, disfruta y comparte los sabores del Valle de Aburrá. ¡Tu próxima experiencia gastronómica te espera!"
         <br>
@@ -80,5 +74,6 @@
     toggleButton.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
-</script>
+    </script>
+</body>
 </html>

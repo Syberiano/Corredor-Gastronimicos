@@ -220,7 +220,7 @@ span {
     margin: 1rem;
 }
 
-.popular, .zonas{
+.popular{
     font-size: 4rem;
     padding: 2rem auto;
     margin: 2rem;
@@ -254,6 +254,7 @@ span {
     border-radius: 15%;
 }
 /*Buscar*/
+
 
 
 /*contactanos*/
