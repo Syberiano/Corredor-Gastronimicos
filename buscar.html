@@ -93,6 +93,16 @@
             </div>
         </div>
     </div>    
+    <div class="restaurante" id="restaurantes-itagui" style="display: none;">
+        <div id="la_fontana" class="contenedor-restaurante">
+            <div class="restaurante__info">
+                <h3 class="restaurante__titulo">La Fontana</h3>
+                <p class="restaurante__descripcion">Un restaurante que ofrece una variedad de platos típicos colombianos, con un enfoque en la frescura y calidad de los ingredientes.</p>
+                <p class="restaurante__direccion">Cl. 53 #51-30, Villa Paula, Itagüi, Antioquia</p>
+                <p class="restaurante__telefono">Teléfono: 3723250</p>
+            </div>
+        </div>
+    </div>
     <script>
         // Mostrar u ocultar restaurantes según la ciudad seleccionada
         document.getElementById("ciudad").addEventListener("change", function () {
@@ -173,11 +183,11 @@
         }
 
         function mostrarRestaurantesItagui() {
-            const restaurante1Coords = { lat: 6.1846, lng: -75.5991 };
-            const restaurante1Marker = L.marker([restaurante1Coords.lat, restaurante1Coords.lng])
+            const la_fontana1Coords = { lat:6.174557129537315, lng: -75.60773784001144 };
+            const la_fontanaMarker = L.marker([la_fontanaCoords.lat, la_fontanaCoords.lng])
             .addTo(map)
-            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>Restaurante 1</div>");
-            markers.push(restaurante1Marker);
+            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>La Fontana</div>");
+            markers.push(la_fontanaMarker);
 
             const restaurante2Coords = { lat: 6.185, lng: -75.600 };
             const restaurante2Marker = L.marker([restaurante2Coords.lat, restaurante2Coords.lng])
