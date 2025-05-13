@@ -197,7 +197,7 @@ select {
     justify-content: center;
     padding: 2rem 0;
     font-family: var(--fuenteSecundaria);
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 .contenedor-restaurante {
@@ -215,6 +215,9 @@ select {
     align-items: center;
     padding: 2rem;
     background-color: var(--colorPrimario);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
 
 .restaurantes {
@@ -233,7 +236,12 @@ select {
     font-size: 1.8rem; 
     color: var(--rojoOscuro);
 }
-
+.img_rest {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
 /* Removed empty rule set for .restaurante__imagen */
 /*resoluciones por debajo de 600px (normalmente celulares)*/
 @media(max-width: 700px) {

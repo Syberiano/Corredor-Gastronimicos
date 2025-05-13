@@ -51,9 +51,9 @@
 
 <div class="restaurantes">
     <div class="restaurante" id="restaurantes-medellin" style="display: none;">
+        <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
         <div id="maryfuego" class="contenedor-restaurante">
             <div class="restaurante__info">
-                <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
                 <h3 class="restaurante__titulo"> Mar y Fuego</h3>
                 <p class="restaurante__descripcion">Un restaurante especializado en mariscos y carnes a la parrilla, ofreciendo una experiencia culinaria única en el corazón de Medellín.</p>
                 <p class="restaurante__direccion">Cra. 37 #10b-4, El Poblado, Medellín</p>
@@ -62,8 +62,8 @@
         </div>
     
         <div id="calaroca" class="contenedor-restaurante">
-            <div class="restaurante__info">
-                <img class="img_rest" src="Imagenes/Cala Roca.png" alt="calaroca">
+            <img class="img_rest" src="Imagenes/Cala Roca.png" alt="calaroca">
+            <div class="restaurante__info">    
                 <h3 class="restaurante__titulo">Cala Roca</h3>
                 <p class="restaurante__descripcion">Un lugar acogedor que combina sabores mediterráneos con un toque colombiano, ideal para disfrutar en familia o con amigos.</p>
                 <p class="restaurante__direccion">Cra. 34 #5g-62, El Poblado, Medellín.</p>
@@ -72,9 +72,9 @@
         </div>
     </div>
     <div class="restaurante" id="restaurantes-sabaneta" style="display: none;">
-        <div id="candilejas" class="contenedor-restaurante">
+        <img class="img_rest" src="Imagenes/candilejas.png" alt="candilejas">
+            <div id="candilejas" class="contenedor-restaurante">
             <div class="restaurante__info">
-                <img class="img_rest" src="Imagenes/candilejas.png" alt="candilejas">
                 <h3 class="restaurante__titulo">Restaurante Candilejas</h3>
                 <p class="restaurante__descripcion">Un restaurante tradicional que ofrece una amplia variedad de platos típicos colombianos, preparados con ingredientes frescos y locales.</p>
                 <p class="restaurante__direccion">Cl. 70 Sur #44-7, Sabaneta, Antioquia.</p>
@@ -82,12 +82,13 @@
             </div>
         </div>
     <div id="la_parrilla_de_sabaneta" class="contenedor-restaurante">
-        <div class="restaurante__info">
-            <img class="img_rest" src="Imagenes/Parrilla.png" alt="La parrilla de Sabaneta">
-            <h3 class="restaurante__titulo">La Parrilla de Sabaneta</h3>
-            <p class="restaurante__descripcion">Un lugar ideal para disfrutar de carnes a la parrilla y platos típicos de la región, en un ambiente familiar y acogedor.</p>
-            <p class="restaurante__direccion">Cl. 78 #43-1, Sabaneta, Antioquia.</p>
-            <p class="restaurante__telefono">Teléfono: 3215225924</p>
+        <img class="img_rest" src="Imagenes/Parrilla.png" alt="La parrilla de Sabaneta">
+            <div class="restaurante__info">
+                <h3 class="restaurante__titulo">La Parrilla de Sabaneta</h3>
+                <p class="restaurante__descripcion">Un lugar ideal para disfrutar de carnes a la parrilla y platos típicos de la región, en un ambiente familiar y acogedor.</p>
+                <p class="restaurante__direccion">Cl. 78 #43-1, Sabaneta, Antioquia.</p>
+                <p class="restaurante__telefono">Teléfono: 3215225924</p>
+            </div>
         </div>
     </div>
     <div class="restaurante" id="restaurantes-itagui" style="display: none;">
@@ -101,9 +102,9 @@
             </div>
         </div>
     </div>
-    <div id="la_montana_piensa" class="contenedor-restaurante">
+        <div id="la_montana_piensa" class="contenedor-restaurante">
+        <img class="img_rest" src="Imagenes/la montanaquepiensa.png" alt="La Montaña que Piensa">
             <div class="restaurante__info">
-                <img class="img_rest" src="Imagenes/la montanaquepiensa.png" alt="">
                 <h3 class="restaurante__titulo">La Montaña que Piensa</h3>
                 <p class="restaurante__descripcion">Un restaurante que combina la cocina tradicional colombiana con un ambiente acogedor y vistas espectaculares de la ciudad.</p>
                 <p class="restaurante__direccion">Vda El Pedregal, Antioquia</p>
@@ -186,7 +187,7 @@
         }
 
         function mostrarRestaurantesItagui() {
-            const la_fontanaCoords = { lat:6.174557129537315, lng: -75.60773784001144 };
+            const la_fontanaCoords = { lat: 6.174557129537315, lng: -75.60773784001144 };
             const la_fontanaMarker = L.marker([la_fontanaCoords.lat, la_fontanaCoords.lng])
             .addTo(map)
             .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>La Fontana</div>");
@@ -202,11 +203,15 @@
 
         document.getElementById("ciudad").addEventListener("change", function () {
             const ciudad = this.value;
+
+            // Cambiar el centro del mapa
             const coords = ciudades[ciudad];
             map.setView([coords.lat, coords.lng], coords.zoom);
 
+            // Limpiar marcadores existentes
             limpiarMarcadores();
 
+            // Mostrar los marcadores correspondientes
             if (ciudad === "medellin") {
                 mostrarRestaurantesMedellin();
             } else if (ciudad === "sabaneta") {
@@ -214,11 +219,17 @@
             } else if (ciudad === "itagui") {
                 mostrarRestaurantesItagui();
             }
-        });
-        document.getElementById("ciudad").addEventListener("change", function () {
-            const ciudad = this.value;
-            const coords = ciudades[ciudad];
-            map.setView([coords.lat, coords.lng], coords.zoom);
+
+            // Mostrar el contenedor correspondiente
+            const contenedores = document.querySelectorAll(".restaurante");
+            contenedores.forEach(contenedor => {
+                contenedor.style.display = "none";
+            });
+
+            const contenedorSeleccionado = document.getElementById(`restaurantes-${ciudad}`);
+            if (contenedorSeleccionado) {
+                contenedorSeleccionado.style.display = "block";
+            }
         });
 
         /* Menú hamburguesa */
