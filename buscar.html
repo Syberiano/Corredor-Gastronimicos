@@ -53,7 +53,7 @@
     <div class="restaurante" id="restaurantes-medellin" style="display: none;">
         <div id="maryfuego" class="contenedor-restaurante">
             <div class="restaurante__info">
-                <img src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
+                <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
                 <h3 class="restaurante__titulo"> Mar y Fuego</h3>
                 <p class="restaurante__descripcion">Un restaurante especializado en mariscos y carnes a la parrilla, ofreciendo una experiencia culinaria única en el corazón de Medellín.</p>
                 <p class="restaurante__direccion">Cra. 37 #10b-4, El Poblado, Medellín</p>
@@ -63,7 +63,7 @@
     
         <div id="calaroca" class="contenedor-restaurante">
             <div class="restaurante__info">
-                <img src="Imagenes/Cala Roca.png" alt="calaroca">
+                <img class="img_rest" src="Imagenes/Cala Roca.png" alt="calaroca">
                 <h3 class="restaurante__titulo">Cala Roca</h3>
                 <p class="restaurante__descripcion">Un lugar acogedor que combina sabores mediterráneos con un toque colombiano, ideal para disfrutar en familia o con amigos.</p>
                 <p class="restaurante__direccion">Cra. 34 #5g-62, El Poblado, Medellín.</p>
@@ -74,7 +74,7 @@
     <div class="restaurante" id="restaurantes-sabaneta" style="display: none;">
         <div id="candilejas" class="contenedor-restaurante">
             <div class="restaurante__info">
-                <img src="Imagenes/candilejas.png" alt="candilejas">
+                <img class="img_rest" src="Imagenes/candilejas.png" alt="candilejas">
                 <h3 class="restaurante__titulo">Restaurante Candilejas</h3>
                 <p class="restaurante__descripcion">Un restaurante tradicional que ofrece una amplia variedad de platos típicos colombianos, preparados con ingredientes frescos y locales.</p>
                 <p class="restaurante__direccion">Cl. 70 Sur #44-7, Sabaneta, Antioquia.</p>
@@ -83,7 +83,7 @@
         </div>
     <div id="la_parrilla_de_sabaneta" class="contenedor-restaurante">
         <div class="restaurante__info">
-            <img src="Imagenes/Parrilla.png" alt="La parrilla de Sabaneta">
+            <img class="img_rest" src="Imagenes/Parrilla.png" alt="La parrilla de Sabaneta">
             <h3 class="restaurante__titulo">La Parrilla de Sabaneta</h3>
             <p class="restaurante__descripcion">Un lugar ideal para disfrutar de carnes a la parrilla y platos típicos de la región, en un ambiente familiar y acogedor.</p>
             <p class="restaurante__direccion">Cl. 78 #43-1, Sabaneta, Antioquia.</p>
@@ -92,7 +92,7 @@
     </div>
     <div class="restaurante" id="restaurantes-itagui" style="display: none;">
         <div id="la_fontana" class="contenedor-restaurante">
-            <img src="Imagenes/lafontana.png" alt="La Fontana">
+            <img class="img_rest" src="Imagenes/lafontana.png" alt="La Fontana">
             <div class="restaurante__info">
                 <h3 class="restaurante__titulo">La Fontana</h3>
                 <p class="restaurante__descripcion">Un restaurante que ofrece una variedad de platos típicos colombianos, con un enfoque en la frescura y calidad de los ingredientes.</p>
@@ -103,7 +103,7 @@
     </div>
     <div id="la_montana_piensa" class="contenedor-restaurante">
             <div class="restaurante__info">
-                <img src="Imagenes/la montanaquepiensa.png" alt="">
+                <img class="img_rest" src="Imagenes/la montanaquepiensa.png" alt="">
                 <h3 class="restaurante__titulo">La Montaña que Piensa</h3>
                 <p class="restaurante__descripcion">Un restaurante que combina la cocina tradicional colombiana con un ambiente acogedor y vistas espectaculares de la ciudad.</p>
                 <p class="restaurante__direccion">Vda El Pedregal, Antioquia</p>
@@ -113,7 +113,6 @@
     </div>
 </div>
     <script>
-        // Mostrar u ocultar restaurantes según la ciudad seleccionada
         document.getElementById("ciudad").addEventListener("change", function () {
             const ciudad = this.value;
             const restaurantesMedellin = document.getElementById("restaurantes-medellin");
@@ -124,8 +123,6 @@
                 restaurantesMedellin.style.display = "none";
             }
         });
-
-        // Mostrar los restaurantes de Medellín al cargar la página
         document.addEventListener("DOMContentLoaded", function () {
             const ciudadInicial = document.getElementById("ciudad").value;
             if (ciudadInicial === "medellin") {
@@ -134,7 +131,6 @@
         });
     </script>
     <script>
-        // Coordenadas de las ciudades
         const ciudades = {
             medellin: { lat: 6.2442, lng: -75.5812, zoom: 12 },
             sabaneta: { lat: 6.151, lng: -75.615, zoom: 14 },
@@ -145,18 +141,16 @@
             barbosa: { lat: 6.4382, lng: -75.332, zoom: 14 },
         };
 
-        // Inicializar el mapa
         const map = L.map("map").setView(
             [ciudades.medellin.lat, ciudades.medellin.lng],
             ciudades.medellin.zoom
         );
-        // Capa de mapa base
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: "&copy; OpenStreetMap contributors",
         }).addTo(map);
 
-        // Marcador para el restaurantes
-        const markers = []; // Array para almacenar los marcadores
+
+        const markers = []; 
 
         function mostrarRestaurantesMedellin() {
             const maryfuegoCoords = { lat: 6.211596086025094, lng: -75.56598257829671 };
@@ -205,13 +199,13 @@
             markers.push(la_montana_piensaMarker);
         }
 
-        // Evento para cambiar el centro del mapa según la ciudad seleccionada
+
         document.getElementById("ciudad").addEventListener("change", function () {
             const ciudad = this.value;
             const coords = ciudades[ciudad];
             map.setView([coords.lat, coords.lng], coords.zoom);
 
-            limpiarMarcadores(); // Limpiar marcadores existentes
+            limpiarMarcadores();
 
             if (ciudad === "medellin") {
                 mostrarRestaurantesMedellin();
@@ -221,10 +215,6 @@
                 mostrarRestaurantesItagui();
             }
         });
-
-        // Inicializar el mapa en Medellín y mostrar los restaurante
-
-        // Evento para cambiar el centro del mapa según la ciudad seleccionada
         document.getElementById("ciudad").addEventListener("change", function () {
             const ciudad = this.value;
             const coords = ciudades[ciudad];
@@ -242,23 +232,21 @@
         document.getElementById("ciudad").addEventListener("change", function () {
             const ciudad = this.value;
 
-            // Ocultar todos los contenedores de restaurantes
             const contenedores = document.querySelectorAll(".restaurante");
             contenedores.forEach(contenedor => {
                 contenedor.style.display = "none";
             });
 
-            // Mostrar el contenedor correspondiente a la ciudad seleccionada
             const contenedorSeleccionado = document.getElementById(`restaurantes-${ciudad}`);
             if (contenedorSeleccionado) {
                 contenedorSeleccionado.style.display = "block";
             }
 
-            // Cambiar el centro del mapa y mostrar los marcadores correspondientes
+         
             const coords = ciudades[ciudad];
             map.setView([coords.lat, coords.lng], coords.zoom);
 
-            limpiarMarcadores(); // Limpiar marcadores existentes
+            limpiarMarcadores(); 
 
             if (ciudad === "medellin") {
                 mostrarRestaurantesMedellin();
@@ -272,20 +260,19 @@
         document.addEventListener("DOMContentLoaded", function () {
             const ciudadInicial = document.getElementById("ciudad").value;
 
-            // Mostrar el contenedor correspondiente a la ciudad inicial
             const contenedorInicial = document.getElementById(`restaurantes-${ciudadInicial}`);
             if (contenedorInicial) {
                 contenedorInicial.style.display = "block";
             }
 
-            // Mostrar los marcadores de la ciudad inicial
+      
             if (ciudadInicial === "medellin") {
                 mostrarRestaurantesMedellin();
             }
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            // No mostrar ningún contenedor de restaurantes al cargar la página
+   
             const contenedores = document.querySelectorAll(".restaurante");
             contenedores.forEach(contenedor => {
                 contenedor.style.display = "none";
