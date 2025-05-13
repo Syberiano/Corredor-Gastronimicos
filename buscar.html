@@ -15,19 +15,19 @@
 <body>
     <header class="header">
         <nav>
-            <a href="index.html">
-                <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="Logotipo" width="50px">
-            </a>
-            <button class="menu-toggle">
-                <img src="Imagenes/iconos/WhhMenu.png" alt="Menú" height="40px">
-            </button>
-            <div class="nav-links">
-                <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
-                <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
-                <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contáctanos</a>
-                <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
-            </div>
-        </nav>  
+        <a href="index.html">
+            <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="" width="10px">
+        </a>
+        <button class="menu-toggle">
+            <img src="Imagenes/iconos/WhhMenu.png" alt="" height="40px">
+        </button>
+        <div class="nav-links">
+            <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
+            <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
+            <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
+            <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
+        </div>
+    </nav>   
         <div class="hero-imgbuscar"></div>
     <div class="container">
     </header>
@@ -44,13 +44,12 @@
             <option value="la_estrella">La Estrella</option>
             <option value="barbosa">Barbosa</option>
         </select> 
-  
-    </main>
-     <div id="map" style="height: 400px; width: 100%;"></div>
+    </div>
+       <div id="map" style="height: 400px; "></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     </div>
 
-<div class="restaurantes dos-columnas">
+<div class="restaurantes-dos-columnas">
         <div class="restaurante" id="restaurantes-medellin" style="display: none;">
             <div id="maryfuego" class="contenedor-restaurante">
                 <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
@@ -116,9 +115,17 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
-</div>
+    </main>
+    <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+    </script>
+
     <script>
         document.getElementById("ciudad").addEventListener("change", function () {
             const ciudad = this.value;
@@ -137,6 +144,7 @@
             }
         });
     </script>
+
     <script>
         const ciudades = {
             medellin: { lat: 6.2442, lng: -75.5812, zoom: 12 },
@@ -236,14 +244,6 @@
             if (contenedorSeleccionado) {
                 contenedorSeleccionado.style.display = "block";
             }
-        });
-
-        /* Menú hamburguesa */
-        const toggleButton = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
         });
 
         document.getElementById("ciudad").addEventListener("change", function () {
