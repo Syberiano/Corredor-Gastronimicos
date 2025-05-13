@@ -17,10 +17,9 @@
 
 }
 
-
-.container {
+.container{
+    width: 1200px;
     margin: 0 auto;
-    background-color: var(--colorPrimario);
 }
 
 h1,h2,h3 {
@@ -180,129 +179,125 @@ nav {
     }
 }
 
-@media(min-width: 768px ) {
+@media(min-width: 768px) {
 
-        .map {
-            padding: 2rem;
-            margin: 2rem;
-        }
-        select {
-            width: 100%;
-            padding: 1rem;
-            font-size: 2rem;
-            font-family: var(--fuenteSecundaria);
-            border: var(--botones) 2px solid;
-            border-radius: 5px;
-        }
+    .map {
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 90%;
+    }
 
-        .main_buscador{
-            display: flex;
-            justify-content: center;
-            padding: 2rem 0;
-            font-family: var(--fuenteSecundaria);
-            font-size: 2rem;
-        }
+    select {
+        width: 100%;
+        max-width: 500px;
+        padding: 1rem;
+        font-size: 2rem;
+        font-family: var(--fuenteSecundaria);
+        border: var(--botones) 2px solid;
+        border-radius: 5px;
+        margin: 0 auto;
+        display: block;
+    }
 
-        .contenedor-restaurante {
-            display: grid;
-            justify-content: center;
-            padding: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            align-items: center;
-            gap: 2rem;
-        }
+    .main_buscador {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem 0;
+        font-family: var(--fuenteSecundaria);
+        font-size: 2rem;
+    }
 
-        .restaurante__info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 2rem;
-            background-color: var(--colorPrimario);
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
+    .contenedor-restaurante {
+        display: grid;
+        justify-content: center;
+        padding: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        align-items: center;
+        gap: 2rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
 
-        .restaurantes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta el número de columnas automáticamente */
-            gap: 2rem; /* Espaciado entre los elementos */
-            padding: 2rem;
-            background-color: var(--beige); /* Fondo opcional */
-        }
+    .restaurante__info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+        background-color: var(--colorPrimario);
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+        text-align: center;
+    }
 
-        .restaurante {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--colorPrimario);
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 1.5rem;
-            transition: transform 0.3s;
-        }
+    .restaurantes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        background-color: var(--beige);
+        max-width: 90%;
+        margin: 0 auto;
+    }
 
-        .restaurante:hover {
-            transform: scale(1.05);
-        }
+    .restaurante {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--colorPrimario);
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 1.5rem;
+        transition: transform 0.3s;
+        text-align: center;
+    }
 
-        .img_rest {
-            width: 100%; /
-            max-width: 300px; 
-            height: 200px; 
-            object-fit: cover; 
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
+    .restaurante:hover {
+        transform: scale(1.05);
+    }
 
-        .restaurante__info {
-            text-align: center;
-        }
+    .restaurante__titulo {
+        font-family: var(--fuenteSecundaria);
+        font-size: 2rem;
+        color: var(--rojoOscuro);
+        margin-bottom: 0.5rem;
+    }
 
-        .restaurante__titulo {
-            font-family: var(--fuenteSecundaria);
-            font-size: 2rem;
-            color: var(--rojoOscuro);
-            margin-bottom: 0.5rem;
-        }
+    .restaurante__descripcion,
+    .restaurante__direccion,
+    .restaurante__telefono {
+        font-family: var(--fuenteSecundaria);
+        font-size: 1.6rem;
+        color: var(--rojoOscuro);
+        margin-bottom: 0.5rem;
+    }
 
-        .restaurante__descripcion, 
-        .restaurante__direccion, 
-        .restaurante__telefono {
-            font-family: var(--fuenteSecundaria);
-            font-size: 1.6rem;
-            color: var(--rojoOscuro);
-            margin-bottom: 0.5rem;
-        }
+    .img_rest {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
 
-        .restaurantes {
-            background-color: var(--beige);
-        }
+    .dos-columnas {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-content: center;
+        align-items: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
 
-        .restaurante__titulo {
-            font-family: var(--fuenteSecundaria);
-            font-size: 2.5rem;
-            color: var (--rojoOscuro);
-            padding: 2%;
-        }
-
-        .restaurante__descripcion, .restaurante__direccion, .restaurante__telefono {
-            font-family: var(--fuenteSecundaria);
-            font-size: 1.8rem; 
-            color: var(--rojoOscuro);
-        }
-        .img_rest {
-            width: 300px;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
+    @media(min-width: 1024px) {
         .dos-columnas {
-            display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
         }
+    }
 }
 
     @media(max-width: 700px) {

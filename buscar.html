@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
-<body class="container">
+<body>
     <header class="header">
         <nav>
             <a href="index.html">
@@ -29,6 +29,7 @@
             </div>
         </nav>  
         <div class="hero-imgbuscar"></div>
+    <div class="container">
     </header>
     <h2 class="zonas">Zonas</h2>
     <main class="main_buscador">
@@ -50,123 +51,73 @@
     </div>
 
 <div class="restaurantes dos-columnas">
-    <div class="restaurante" id="restaurantes-medellin" style="display: none;">
-        <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
+        <div class="restaurante" id="restaurantes-medellin" style="display: none;">
             <div id="maryfuego" class="contenedor-restaurante">
+                <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
                 <div class="restaurante__info">
-                    <h3 class="restaurante__titulo"> Mar y Fuego</h3>
-                    <p class="restaurante__descripcion">Un restaurante especializado en mariscos y carnes a la parrilla, ofreciendo una experiencia culinaria única en el corazón de Medellín.</p>
-                    <p class="restaurante__direccion">Cra. 37 #10b-4, El Poblado, Medellín</p>
-                    <p class="restaurante__telefono">Teléfono: 123456789</p>
+                    <h3 class="restaurante__titulo">Mar Y Fuego</h3>
+                    <p class="restaurante__descripcion">Un restaurante que ofrece una experiencia gastronómica única con un enfoque en mariscos frescos y platos innovadores.</p>
+                    <p class="restaurante__direccion">Carrera 43A # 10-25, Medellín, Antioquia</p>
+                    <p class="restaurante__telefono">Teléfono: 444-4444</p>
                 </div>
             </div>
-    
-        <div id="calaroca" class="contenedor-restaurante">
-            <img class="img_rest" src="Imagenes/Cala Roca.png" alt="calaroca">
-            <div class="restaurante__info">    
-                <h3 class="restaurante__titulo">Cala Roca</h3>
-                <p class="restaurante__descripcion">Un lugar acogedor que combina sabores mediterráneos con un toque colombiano, ideal para disfrutar en familia o con amigos.</p>
-                <p class="restaurante__direccion">Cra. 34 #5g-62, El Poblado, Medellín.</p>
-                <p class="restaurante__telefono">Teléfono: 3046555889</p>
-            </div>     
-        </div>
-    </div>
-    <div class="restaurante" id="restaurantes-sabaneta" style="display: none;">
-        <img class="img_rest" src="Imagenes/candilejas.png" alt="candilejas">
-            <div id="candilejas" class="contenedor-restaurante">
-            <div class="restaurante__info">
-                <h3 class="restaurante__titulo">Restaurante Candilejas</h3>
-                <p class="restaurante__descripcion">Un restaurante tradicional que ofrece una amplia variedad de platos típicos colombianos, preparados con ingredientes frescos y locales.</p>
-                <p class="restaurante__direccion">Cl. 70 Sur #44-7, Sabaneta, Antioquia.</p>
-                <p class="restaurante__telefono">Teléfono: 3164587888</p>
+
+            <div id="calaroca" class="contenedor-restaurante">
+                <img class="img_rest" src="Imagenes/Cala Roca.png" alt="Cala Roca">
+                <div class="restaurante__info">
+                    <h3 class="restaurante__titulo">Cala Roca</h3>
+                    <p class="restaurante__descripcion">Un lugar acogedor que combina la cocina mediterránea con un ambiente relajante y vistas impresionantes.</p>
+                    <p class="restaurante__direccion">Carrera 38 # 8-20, Medellín, Antioquia</p>
+                    <p class="restaurante__telefono">Teléfono: 444-5555</p>
+                </div>
             </div>
         </div>
-    <div id="la_parrilla_de_sabaneta" class="contenedor-restaurante">
-        <img class="img_rest" src="Imagenes/Parrilla.png" alt="La parrilla de Sabaneta">
-            <div class="restaurante__info">
-                <h3 class="restaurante__titulo">La Parrilla de Sabaneta</h3>
-                <p class="restaurante__descripcion">Un lugar ideal para disfrutar de carnes a la parrilla y platos típicos de la región, en un ambiente familiar y acogedor.</p>
-                <p class="restaurante__direccion">Cl. 78 #43-1, Sabaneta, Antioquia.</p>
-                <p class="restaurante__telefono">Teléfono: 3215225924</p>
+        <div class="restaurante" id="restaurantes-sabaneta" style="display: none;">
+            <div>
+                <div id="candilejas" class="contenedor-restaurante">
+                    <img class="img_rest" src="Imagenes/candilejas.png" alt="Restaurante Candilejas">
+                    <div class="restaurante__info">
+                        <h3 class="restaurante__titulo">Restaurante Candilejas</h3>
+                        <p class="restaurante__descripcion">Un restaurante que ofrece una variedad de platos típicos colombianos, con un enfoque en la frescura y calidad de los ingredientes.</p>
+                        <p class="restaurante__direccion">Carrera 43A # 10-25, Sabaneta, Antioquia</p>
+                        <p class="restaurante__telefono">Teléfono: 444-4444</p>
+                    </div>
+                </div>
+
+                <div id="la_parrilla_de_sabaneta" class="contenedor-restaurante">
+                    <img class="img_rest" src="Imagenes/Parrilla.png" alt="La Parrilla de Sabaneta">
+                    <div class="restaurante__info">
+                        <h3 class="restaurante__titulo">La Parrilla de Sabaneta</h3>
+                        <p class="restaurante__descripcion">Un lugar acogedor que combina la cocina mediterránea con un ambiente relajante y vistas impresionantes.</p>
+                        <p class="restaurante__direccion">Carrera 38 # 8-20, Sabaneta, Antioquia</p>
+                        <p class="restaurante__telefono">Teléfono: 444-5555</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="restaurante" id="restaurantes-itagui" style="display: none;">
-        <div id="la_fontana" class="contenedor-restaurante">
-            <img class="img_rest" src="Imagenes/lafontana.png" alt="La Fontana">
-            <div class="restaurante__info">
-                <h3 class="restaurante__titulo">La Fontana</h3>
-                <p class="restaurante__descripcion">Un restaurante que ofrece una variedad de platos típicos colombianos, con un enfoque en la frescura y calidad de los ingredientes.</p>
-                <p class="restaurante__direccion">Cl. 53 #51-30, Villa Paula, Itagüi, Antioquia</p>
-                <p class="restaurante__telefono">Teléfono: 3723250</p>
+
+        <div class="restaurante" id="restaurantes-itagui" style="display: none;">
+            <div id="la_fontana" class="contenedor-restaurante">
+                <img class="img_rest" src="Imagenes/lafontana.png" alt="La Fontana">
+                <div class="restaurante__info">
+                    <h3 class="restaurante__titulo">La Fontana</h3>
+                    <p class="restaurante__descripcion">Un restaurante que ofrece una variedad de platos típicos colombianos, con un enfoque en la frescura y calidad de los ingredientes.</p>
+                    <p class="restaurante__direccion">Cl. 53 #51-30, Villa Paula, Itagüi, Antioquia</p>
+                    <p class="restaurante__telefono">Teléfono: 3723250</p>
+                </div>
             </div>
-        </div>
-    </div>
-        <div id="la_montana_piensa" class="contenedor-restaurante">
-        <img class="img_rest" src="Imagenes/la montanaquepiensa.png" alt="La Montaña que Piensa">
-            <div class="restaurante__info">
-                <h3 class="restaurante__titulo">La Montaña que Piensa</h3>
-                <p class="restaurante__descripcion">Un restaurante que combina la cocina tradicional colombiana con un ambiente acogedor y vistas espectaculares de la ciudad.</p>
-                <p class="restaurante__direccion">Vda El Pedregal, Antioquia</p>
-                <p class="restaurante__telefono">Teléfono: 3146939172</p>
+            <div id="la_montana_piensa" class="contenedor-restaurante">
+                <img class="img_rest" src="Imagenes/la montanaquepiensa.png" alt="La Montaña que Piensa">
+                <div class="restaurante__info">
+                    <h3 class="restaurante__titulo">La Montaña que Piensa</h3>
+                    <p class="restaurante__descripcion">Un lugar acogedor que combina la cocina mediterránea con un ambiente relajante y vistas impresionantes.</p>
+                    <p class="restaurante__direccion">Carrera 38 # 8-20, Itagüi, Antioquia</p>
+                    <p class="restaurante__telefono">Teléfono: 444-5555</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="restaurantes">
-    <div class="restaurante">
-        <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
-        <div class="restaurante__info">
-            <h3 class="restaurante__titulo">Mar y Fuego</h3>
-            <p class="restaurante__descripcion">Un restaurante especializado en mariscos y carnes a la parrilla.</p>
-            <p class="restaurante__direccion">Cra. 37 #10b-4, El Poblado, Medellín</p>
-            <p class="restaurante__telefono">Teléfono: 123456789</p>
-        </div>
-    <div class="restaurante"></div>
-        <img class="img_rest" src="Imagenes/Cala Roca.png" alt="Cala Roca">
-        <div class="restaurante__info">
-            <h3 class="restaurante__titulo">Cala Roca</h3>
-            <p class="restaurante__descripcion">Un lugar acogedor que combina sabores mediterráneos con un toque colombiano, ideal para disfrutar en familia o con amigos.</p>
-            <p class="restaurante__direccion">Cra. 34 #5g-62, El Poblado, Medellín</p>
-            <p class="restaurante__telefono">Teléfono: 3046555889</p>
-        </div>
-    </div>
-    <div class="restaurante">
-        <img class="img_rest" src="Imagenes/candilejas.png" alt="Candilejas">
-        <div class="restaurante__info">
-            <h3 class="restaurante__titulo">Restaurante Candilejas</h3>
-            <p class="restaurante__descripcion">Un restaurante tradicional que ofrece una amplia variedad de platos típicos colombianos, preparados con ingredientes frescos y locales.</p>
-            <p class="restaurante__direccion">Cl. 70 Sur #44-7, Sabaneta, Antioquia</p>
-            <p class="restaurante__telefono">Teléfono: 3164587888</p>
-        </div>
-    </div>
-    <div class="restaurante">
-        <img class="img_rest" src="Imagenes/Parrilla.png" alt="La Parrilla de Sabaneta">
-        <div class="restaurante__info">
-            <h3 class="restaurante__titulo">La Parrilla de Sabaneta</h3>
-            <p class="restaurante__descripcion">Un lugar ideal para disfrutar de carnes a la parrilla y platos típicos de la región, en un ambiente familiar y acogedor.</p>
-            <p class="restaurante__direccion">Cl. 78 #43-1, Sabaneta, Antioquia</p>
-            <p class="restaurante__telefono">Teléfono: 3215225924</p>
-        </div>
-    </div>
-    <div class="restaurante">
-        <img class="img_rest" src="Imagenes/lafontana.png" alt="La Fontana">
-        <div class="restaurante__info">
-            <h3 class="restaurante__titulo">La Fontana</h3>
-            <p class="restaurante__descripcion">Un restaurante que ofrece una variedad de platos típicos colombianos, con un enfoque en la frescura y calidad de los ingredientes.</p>
-            <p class="restaurante__direccion">Cl. 53 #51-30, Villa Paula, Itagüi, Antioquia</p>
-            <p class="restaurante__telefono">Teléfono: 3723250</p>
-        </div>
-    </div>
-    <div class="restaurante">
-        <img class="img_rest" src="Imagenes/la montanaquepiensa.png" alt="La Montaña que Piensa">
-        <div class="restaurante__info">
-            <h3 class="restaurante__titulo">La Montaña que Piensa</h3>
-            <p class="restaurante__descripcion">Un restaurante que combina la cocina tradicional colombiana con un ambiente acogedor y vistas espectaculares de la ciudad.</p>
-            <p class="restaurante__direccion">Vda El Pedregal, Antioquia</p>
-            <p class="restaurante__telefono">Teléfono: 3146939172</p>
-        </div>
-    </div>
 </div>
     <script>
         document.getElementById("ciudad").addEventListener("change", function () {
@@ -345,6 +296,7 @@
             });
         });
     </script>
+    </div>
     <footer class="footer"> 
          <p class="footer__text">"Descubre, disfruta y comparte los sabores del Valle de Aburrá. ¡Tu próxima experiencia gastronómica te espera!"
         <br>
