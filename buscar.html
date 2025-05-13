@@ -2,79 +2,111 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Corredor Gastronomico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corredor Gastronómico</title>
     <link rel="stylesheet" href="CSS/buscar.css">
-    <link rel="icon" href="Imagenes/logotipoCorredorGastronomico.ico" type="img/icon">
+    <link rel="icon" href="Imagenes/logotipoCorredorGastronomico.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!--<link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body class="container">
-    <script src="script.js"></script>
-<header class="header">
-    <nav>
-        <a href="index.html">
-            <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="" width="10px">
-        </a>
-        <button class="menu-toggle">
-            <img src="Imagenes/iconos/WhhMenu.png" alt="" height="40px">
-        </button>
-        <div class="nav-links">
-            <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
-            <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
-            <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
-            <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
-        </div>
-    </nav>  
-    <div class="hero-imgbuscar"></div>
-</header>
-<div class="container__buscador">
-    <h2 class="zonas">Zonas</h2>
-        <div class="buscador">
-            <select name="opciones" id="buscar_zona" onchange="actualizarMapa()">
-                <option value="0">Selecciona una zona</option>
-                <option value="1">Poblado</option> 
-                <option value="2">Envigado</option>
-                <option value="3">Sabaneta</option>
-                <option value="4">La Estrella</option>
-                <option value="5">Itagüí</option>
-                <option value="6">Bello</option>
-                <option value="7">Copacabana</option>
-                <option value="8">Barbosa</option>
-                <option value="9">Girardota</option>
-                <option value="10">Caldas</option>
-                <option value="11">Medellín</option>
-            </select>
-        </div>
-</div>
-<div id="mapa" style="width: 100%; height: 400px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.69980792949!2d-75.66361397153547!3d6.244367696483319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad05%3A0x42137cfcc7b53b56!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1746922883508!5m2!1ses-419!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-    <div id="mapaPoblado" style="display: none; margin-top: 20px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.411457044604!2d-75.57026262552118!3d6.209336976735485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428299b5aa6d9%3A0x2020c055ff96b671!2sEl%20Poblado%2C%20Medell%C3%ADn%2C%20El%20Poblado%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1746923004948!5m2!1ses-419!2sco" 
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
+    <header class="header">
+        <nav>
+            <a href="index.html">
+                <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="Logotipo" width="50px">
+            </a>
+            <button class="menu-toggle">
+                <img src="Imagenes/iconos/WhhMenu.png" alt="Menú" height="40px">
+            </button>
+            <div class="nav-links">
+                <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
+                <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
+                <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contáctanos</a>
+                <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
+            </div>
+        </nav>  
+        <div class="hero-imgbuscar"></div>
+    </header>
+    <div id="selector">
+        <label for="ciudad">Selecciona una ciudad:</label>
+        <select id="ciudad">
+            <option value="medellin" selected>Medellín</option>
+            <option value="sabaneta">Sabaneta</option>
+            <option value="itagui">Itagui</option>
+            <option value="envigado">Envigado</option>
+            <option value="bello">Bello</option>
+            <option value="la_estrella">La Estrella</option>
+            <option value="barbosa">Barbosa</option>
+        </select>
+    </div>
+    <div id="map" style="height: 500px;"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<center><footer class="footer">
-    <p class="footer__text">"Descubre, disfruta y comparte los sabores del Valle de Aburrá. ¡Tu próxima experiencia gastronómica te espera!"
-        <br>
-    <center><font class="footer__text">Todos los derechos reservados - Corredor Gastronomico © 2025</font></center>
-    </p>
-</footer></center>
-<script>
-    const toggleButton = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    <div class="restaurante">
+        <div id="maryfuego" class="contenedor-restaurante">
+            <div class="restaurante__info">
+                <h2 class="restaurante__titulo"> Mar y Fuego</h2>
+                <p class="restaurante__descripcion">Descripción del restaurante 1.</p>
+                <p class="restaurante__direccion">Cra. 37 #10b-4, El Poblado, Medellín</p>
+                <p class="restaurante__telefono">Teléfono: 123456789</p>
+            </div>
+            <div class="restaurante__imagen">
+                <img src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego" width="200px">
+            </div>
+        </div>
+    </div>
+    <script>
+        // Coordenadas de las ciudades
+        const ciudades = {
+            medellin: { lat: 6.2442, lng: -75.5812, zoom: 12 },
+            sabaneta: { lat: 6.151, lng: -75.615, zoom: 14 },
+            itagui: { lat: 6.1846, lng: -75.5991, zoom: 14 },
+            envigado: { lat: 6.1733, lng: -75.5636, zoom: 14 },
+            bello: { lat: 6.3373, lng: -75.558, zoom: 14 },
+            la_estrella: { lat: 6.1575, lng: -75.644, zoom: 14 },
+            barbosa: { lat: 6.4382, lng: -75.332, zoom: 14 },
+        };
 
-    toggleButton.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+        // Inicializar el mapa
+        const map = L.map("map").setView(
+            [ciudades.medellin.lat, ciudades.medellin.lng],
+            ciudades.medellin.zoom
+        );
+        // Capa de mapa base
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors",
+        }).addTo(map);
+
+        // Marcador para el restaurantes
+        const maryfuegoCoords = { lat: 6.211596086025094, lng: -75.56598257829671 }; // Coordenadas del restaurante
+        const maryfuegoMarker = L.marker([maryfuegoCoords.lat, maryfuegoCoords.lng])
+            .addTo(map)
+            .bindPopup("Mar Y Fuego");
+        maryfuegoMarker.openPopup();
+
+        // Evento para cambiar el centro del mapa según la ciudad seleccionada
+        document.getElementById("ciudad").addEventListener("change", function () {
+            const ciudad = this.value;
+            const coords = ciudades[ciudad];
+            map.setView([coords.lat, coords.lng], coords.zoom);
+        });
+
+        /* Menú hamburguesa */
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
     </script>
+    <footer class="footer"></footer>
+        <p class="footer__text">"Descubre, disfruta y comparte los sabores del Valle de Aburrá. ¡Tu próxima experiencia gastronómica te espera!"
+            <br>
+            <span>Todos los derechos reservados - Corredor Gastronómico © 2025</span>
+        </p>
+    </footer>
 </body>
 </html>
