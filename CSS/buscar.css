@@ -17,13 +17,10 @@
 
 }
 
-main{
-    margin-top: 100px;
-    height: 700px;
-}
 
 .container {
     margin: 0 auto;
+    background-color: var(--colorPrimario);
 }
 
 h1,h2,h3 {
@@ -32,21 +29,13 @@ h1,h2,h3 {
     font-family: var(--fuentePrincipal);
 }
 
-/*h1 {
-    font-size: 10rem;
-    letter-spacing: 0.5rem;
-    line-height: 10 rem;
-    padding-bottom: 1rem;
-    text-align: start;
+.zonas{
+    font-size: 6rem;
+    padding: 2rem auto;
+    margin: 2rem;
+    color: var(--mostaza);
+    font-family: var(--fuenteSecundaria);
 }
-
-h2 {
-    font-size: 3.2rem;
-}
-
-h3 {
-    font-size: 2.4rem;
-}*/
 
 footer{
     width: 100%;
@@ -55,15 +44,24 @@ footer{
 }
 
 .footer__text{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: var(--fuenteSecundaria);
     font-size: 2.2rem;
     color:white;
     padding: 2%;
 }
 
-.Slogan {
+span{
+    color: var(--colorPrimario);
     font-family: var(--fuenteSecundaria);
+    font-size: 2.2rem;
+    margin-top: 1.6rem;
 }
+
 
 .header {
     background-color: var(--rojoOscuro);
@@ -73,11 +71,26 @@ footer{
 }
 
 nav {
-    max-width: 992px;
-    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
+
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.menu-toggle {
+    width: auto;
+    color: white;
+    display: none;
+    font-size: large;
+    background-color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .nav__enlace {
@@ -104,43 +117,57 @@ nav {
     margin: 1rem;
 }
 
+.hero-imgbuscar { 
+    display: flex;
+    max-width: 100%;
+    height: 10rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(../Imagenes/Comidas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+
 .nosotrosImg{
     width: 50%;
     margin-bottom: 5%;
     margin-left: 25%;
 }
 
-main{
-    font-size: xx-large;
-    font-family: var(--fuenteSecundaria);
-}
 
-.titlePrincipal{
-    color: var(--rojoOscuro);
-    font-size: xx-large;
-    font-weight: 800;
-    font-family: var(--fuenteSecundaria);
-    margin-left: 36.5%;
-}
-
-.titleSecundario{
-    color: var(--rojoOscuro);
-    font-size: x-large;
-    font-weight: 600;
-}
 
 .muchoTexto{
     padding: 15%;
-    font-size: xxx-large;
+    font-size: xx-large;
     font-family: var(--fuenteSecundaria);
 }
+
+
 /*resoluciones por debajo de 1200px (normalmente tablets)*/
 
 @media(max-width:1199px) {
+    /*nav{
+        width: 100%;
+        display: flex;
+    }*/
+
     nav{
         width: 100%;
         display: flex;
     }
+
+    .nav-links{
+        width: 100%;
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
     .nosotrosImg{
         width: 50%;
         margin-left: 25%;
@@ -152,17 +179,95 @@ main{
         font-family: var(--fuenteSecundaria);
     }
 }
+.map {
+    padding: 2rem;
+    margin: 2rem;
+}
+select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: var(--fuenteSecundaria);
+    border: var(--botones) 2px solid;
+    border-radius: 5px;
+}
 
+.main_buscador{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+}
+
+.contenedor-restaurante {
+    display: grid;
+    justify-content: center;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    gap: 2rem;
+}
+
+.restaurante__info {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--colorPrimario);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.restaurantes {
+    background-color: var(--beige);
+}
+
+.restaurante__titulo {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2.5rem;
+    color: var(--rojoOscuro);
+    padding: 2%;
+}
+
+.restaurante__descripcion, .restaurante__direccion, .restaurante__telefono {
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.8rem; 
+    color: var(--rojoOscuro);
+}
+.img_rest {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+/* Removed empty rule set for .restaurante__imagen */
 /*resoluciones por debajo de 600px (normalmente celulares)*/
 @media(max-width: 700px) {
     .nosotrosImg{
         width: 50%;
         margin-left: 25%;
     }
-    nav {
+
+    nav{
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: flex;
+        margin-right: 8%;
+        height: 4rem;
+        font-size: large;
     }
     .muchoTexto{
         padding: 5%;

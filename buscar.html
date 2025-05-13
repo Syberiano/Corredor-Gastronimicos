@@ -2,37 +2,299 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Corredor Gastronomico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corredor Gastronómico</title>
     <link rel="stylesheet" href="CSS/buscar.css">
-    <link rel="icon" href="Imagenes/logotipoCorredorGastronomico.ico" type="img/icon">
+    <link rel="icon" href="Imagenes/logotipoCorredorGastronomico.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body class="container">
- <header class="header">
-    <nav>
-        <a href="index.html">
-            <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="">
-        </a>
-        <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
-        <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
-        <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contactanos</a>
-        <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
-    </nav>  
-</header>
-<main>
-</main>
-<footer class="footer">
-    <p class="footer__text">"Descubre, disfruta y comparte los sabores del Valle de Aburrá. ¡Tu próxima experiencia gastronómica te espera!"
+    <header class="header">
+        <nav>
+            <a href="index.html">
+                <img class="logo" src="Imagenes/logotipoCorredorGastronomico - copia.png" alt="Logotipo" width="50px">
+            </a>
+            <button class="menu-toggle">
+                <img src="Imagenes/iconos/WhhMenu.png" alt="Menú" height="40px">
+            </button>
+            <div class="nav-links">
+                <a class="nav__enlace nav__enlace--activo" href="index.html">Inicio</a>
+                <a class="nav__enlace nav__enlace--activo" href="buscar.html">Buscar</a>
+                <a class="nav__enlace nav__enlace--activo" href="Contactanos.html">Contáctanos</a>
+                <a class="nav__enlace nav__enlace--activo" href="Nosotros.html">Nosotros</a>
+            </div>
+        </nav>  
+        <div class="hero-imgbuscar"></div>
+    </header>
+    <h2 class="zonas">Zonas</h2>
+    <main class="main_buscador">
+    <div id="selector">
+        <select id="ciudad">
+            <option for="Selecciona" selected disabled >Selecciona un area</option>
+            <option value="medellin">Medellín</option>
+            <option value="sabaneta">Sabaneta</option>
+            <option value="itagui">Itagui</option>
+            <option value="envigado">Envigado</option>
+            <option value="bello">Bello</option>
+            <option value="la_estrella">La Estrella</option>
+            <option value="barbosa">Barbosa</option>
+        </select> 
+  
+    </main>
+     <div id="map" style="height: 400px; width: 100%;"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </div>
+
+<div class="restaurantes">
+    <div class="restaurante" id="restaurantes-medellin" style="display: none;">
+        <img class="img_rest" src="Imagenes/Mar y Fuego.png" alt="Mar Y Fuego">
+        <div id="maryfuego" class="contenedor-restaurante">
+            <div class="restaurante__info">
+                <h3 class="restaurante__titulo"> Mar y Fuego</h3>
+                <p class="restaurante__descripcion">Un restaurante especializado en mariscos y carnes a la parrilla, ofreciendo una experiencia culinaria única en el corazón de Medellín.</p>
+                <p class="restaurante__direccion">Cra. 37 #10b-4, El Poblado, Medellín</p>
+                <p class="restaurante__telefono">Teléfono: 123456789</p>
+            </div>
+        </div>
+    
+        <div id="calaroca" class="contenedor-restaurante">
+            <img class="img_rest" src="Imagenes/Cala Roca.png" alt="calaroca">
+            <div class="restaurante__info">    
+                <h3 class="restaurante__titulo">Cala Roca</h3>
+                <p class="restaurante__descripcion">Un lugar acogedor que combina sabores mediterráneos con un toque colombiano, ideal para disfrutar en familia o con amigos.</p>
+                <p class="restaurante__direccion">Cra. 34 #5g-62, El Poblado, Medellín.</p>
+                <p class="restaurante__telefono">Teléfono: 3046555889</p>
+            </div>     
+        </div>
+    </div>
+    <div class="restaurante" id="restaurantes-sabaneta" style="display: none;">
+        <img class="img_rest" src="Imagenes/candilejas.png" alt="candilejas">
+            <div id="candilejas" class="contenedor-restaurante">
+            <div class="restaurante__info">
+                <h3 class="restaurante__titulo">Restaurante Candilejas</h3>
+                <p class="restaurante__descripcion">Un restaurante tradicional que ofrece una amplia variedad de platos típicos colombianos, preparados con ingredientes frescos y locales.</p>
+                <p class="restaurante__direccion">Cl. 70 Sur #44-7, Sabaneta, Antioquia.</p>
+                <p class="restaurante__telefono">Teléfono: 3164587888</p>
+            </div>
+        </div>
+    <div id="la_parrilla_de_sabaneta" class="contenedor-restaurante">
+        <img class="img_rest" src="Imagenes/Parrilla.png" alt="La parrilla de Sabaneta">
+            <div class="restaurante__info">
+                <h3 class="restaurante__titulo">La Parrilla de Sabaneta</h3>
+                <p class="restaurante__descripcion">Un lugar ideal para disfrutar de carnes a la parrilla y platos típicos de la región, en un ambiente familiar y acogedor.</p>
+                <p class="restaurante__direccion">Cl. 78 #43-1, Sabaneta, Antioquia.</p>
+                <p class="restaurante__telefono">Teléfono: 3215225924</p>
+            </div>
+        </div>
+    </div>
+    <div class="restaurante" id="restaurantes-itagui" style="display: none;">
+        <div id="la_fontana" class="contenedor-restaurante">
+            <img class="img_rest" src="Imagenes/lafontana.png" alt="La Fontana">
+            <div class="restaurante__info">
+                <h3 class="restaurante__titulo">La Fontana</h3>
+                <p class="restaurante__descripcion">Un restaurante que ofrece una variedad de platos típicos colombianos, con un enfoque en la frescura y calidad de los ingredientes.</p>
+                <p class="restaurante__direccion">Cl. 53 #51-30, Villa Paula, Itagüi, Antioquia</p>
+                <p class="restaurante__telefono">Teléfono: 3723250</p>
+            </div>
+        </div>
+    </div>
+        <div id="la_montana_piensa" class="contenedor-restaurante">
+        <img class="img_rest" src="Imagenes/la montanaquepiensa.png" alt="La Montaña que Piensa">
+            <div class="restaurante__info">
+                <h3 class="restaurante__titulo">La Montaña que Piensa</h3>
+                <p class="restaurante__descripcion">Un restaurante que combina la cocina tradicional colombiana con un ambiente acogedor y vistas espectaculares de la ciudad.</p>
+                <p class="restaurante__direccion">Vda El Pedregal, Antioquia</p>
+                <p class="restaurante__telefono">Teléfono: 3146939172</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        document.getElementById("ciudad").addEventListener("change", function () {
+            const ciudad = this.value;
+            const restaurantesMedellin = document.getElementById("restaurantes-medellin");
+
+            if (ciudad === "medellin") {
+                restaurantesMedellin.style.display = "block";
+            } else {
+                restaurantesMedellin.style.display = "none";
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const ciudadInicial = document.getElementById("ciudad").value;
+            if (ciudadInicial === "medellin") {
+                document.getElementById("restaurantes-medellin").style.display = "block";
+            }
+        });
+    </script>
+    <script>
+        const ciudades = {
+            medellin: { lat: 6.2442, lng: -75.5812, zoom: 12 },
+            sabaneta: { lat: 6.151, lng: -75.615, zoom: 14 },
+            itagui: { lat: 6.1846, lng: -75.5991, zoom: 14 },
+            envigado: { lat: 6.1733, lng: -75.5636, zoom: 14 },
+            bello: { lat: 6.3373, lng: -75.558, zoom: 14 },
+            la_estrella: { lat: 6.1575, lng: -75.644, zoom: 14 },
+            barbosa: { lat: 6.4382, lng: -75.332, zoom: 14 },
+        };
+
+        const map = L.map("map").setView(
+            [ciudades.medellin.lat, ciudades.medellin.lng],
+            ciudades.medellin.zoom
+        );
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors",
+        }).addTo(map);
+
+
+        const markers = []; 
+
+        function mostrarRestaurantesMedellin() {
+            const maryfuegoCoords = { lat: 6.211596086025094, lng: -75.56598257829671 };
+            const maryfuegoMarker = L.marker([maryfuegoCoords.lat, maryfuegoCoords.lng])
+            .addTo(map)
+            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>Mar Y Fuego</div>");
+            markers.push(maryfuegoMarker);
+
+            const calarocaCoords = { lat: 6.205426548352704, lng: -75.56447896561595 };
+            const calarocaMarker = L.marker([calarocaCoords.lat, calarocaCoords.lng])
+            .addTo(map)
+            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>Cala Roca</div>");
+            markers.push(calarocaMarker);
+        }
+
+        function limpiarMarcadores() {
+            markers.forEach(marker => map.removeLayer(marker));
+            markers.length = 0;
+        }
+
+        function mostrarRestaurantesSabaneta() {
+            const candilejasCoords = { lat: 6.151648466265909, lng: -75.61555875569837 };
+            const candilejasMarker = L.marker([candilejasCoords.lat, candilejasCoords.lng])
+            .addTo(map)
+            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>Restaurante Candilejas</div>");
+            markers.push(candilejasMarker);
+
+            const la_parrilla_de_sabanetaCoords = { lat: 6.150296711971019, lng: -75.62255284417819 };
+            const la_parrilla_de_sabanetaMarker = L.marker([la_parrilla_de_sabanetaCoords.lat, la_parrilla_de_sabanetaCoords.lng])
+            .addTo(map)
+            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>La Parrilla de Sabaneta</div>");
+            markers.push(la_parrilla_de_sabanetaMarker);
+        }
+
+        function mostrarRestaurantesItagui() {
+            const la_fontanaCoords = { lat: 6.174557129537315, lng: -75.60773784001144 };
+            const la_fontanaMarker = L.marker([la_fontanaCoords.lat, la_fontanaCoords.lng])
+            .addTo(map)
+            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>La Fontana</div>");
+            markers.push(la_fontanaMarker);
+
+            const la_montana_piensaCoords = { lat: 6.195334147231573, lng: -75.61891628391588 };
+            const la_montana_piensaMarker = L.marker([la_montana_piensaCoords.lat, la_montana_piensaCoords.lng])
+            .addTo(map)
+            .bindPopup("<div style='font-size: 16px; font-family: Sansita, sans-serif;'>La Montaña que Piensa</div>");
+            markers.push(la_montana_piensaMarker);
+        }
+
+
+        document.getElementById("ciudad").addEventListener("change", function () {
+            const ciudad = this.value;
+
+            // Cambiar el centro del mapa
+            const coords = ciudades[ciudad];
+            map.setView([coords.lat, coords.lng], coords.zoom);
+
+            // Limpiar marcadores existentes
+            limpiarMarcadores();
+
+            // Mostrar los marcadores correspondientes
+            if (ciudad === "medellin") {
+                mostrarRestaurantesMedellin();
+            } else if (ciudad === "sabaneta") {
+                mostrarRestaurantesSabaneta();
+            } else if (ciudad === "itagui") {
+                mostrarRestaurantesItagui();
+            }
+
+            // Mostrar el contenedor correspondiente
+            const contenedores = document.querySelectorAll(".restaurante");
+            contenedores.forEach(contenedor => {
+                contenedor.style.display = "none";
+            });
+
+            const contenedorSeleccionado = document.getElementById(`restaurantes-${ciudad}`);
+            if (contenedorSeleccionado) {
+                contenedorSeleccionado.style.display = "block";
+            }
+        });
+
+        /* Menú hamburguesa */
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.getElementById("ciudad").addEventListener("change", function () {
+            const ciudad = this.value;
+
+            const contenedores = document.querySelectorAll(".restaurante");
+            contenedores.forEach(contenedor => {
+                contenedor.style.display = "none";
+            });
+
+            const contenedorSeleccionado = document.getElementById(`restaurantes-${ciudad}`);
+            if (contenedorSeleccionado) {
+                contenedorSeleccionado.style.display = "block";
+            }
+
+         
+            const coords = ciudades[ciudad];
+            map.setView([coords.lat, coords.lng], coords.zoom);
+
+            limpiarMarcadores(); 
+
+            if (ciudad === "medellin") {
+                mostrarRestaurantesMedellin();
+            } else if (ciudad === "sabaneta") {
+                mostrarRestaurantesSabaneta();
+            } else if (ciudad === "itagui") {
+                mostrarRestaurantesItagui();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const ciudadInicial = document.getElementById("ciudad").value;
+
+            const contenedorInicial = document.getElementById(`restaurantes-${ciudadInicial}`);
+            if (contenedorInicial) {
+                contenedorInicial.style.display = "block";
+            }
+
+      
+            if (ciudadInicial === "medellin") {
+                mostrarRestaurantesMedellin();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+   
+            const contenedores = document.querySelectorAll(".restaurante");
+            contenedores.forEach(contenedor => {
+                contenedor.style.display = "none";
+            });
+        });
+    </script>
+    <footer class="footer"> 
+         <p class="footer__text">"Descubre, disfruta y comparte los sabores del Valle de Aburrá. ¡Tu próxima experiencia gastronómica te espera!"
         <br>
-    <center><font class="footer__text">Todos los derechos reservados - Corredor Gastronomico © 2025</font></center>
-    </p>
-</footer>
+        <span>Todos los derechos reservados - Corredor Gastronómico © 2025</span>
+        </p></footer>
+       
+</body>
 </html>
