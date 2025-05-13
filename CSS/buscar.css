@@ -125,7 +125,7 @@
     .img_rest {
         width: 100%;
         max-width: 300px;
-        height: 300px;
+        max-height: 300px;
         height: auto;
         object-fit: cover;
         border-radius: 5px;
@@ -303,7 +303,7 @@ nav {
     }
 }
 
-@media(min-width: 768px) {
+@media(max-width: 768px) {
 /*
     .map {
         padding: 2rem;
@@ -433,6 +433,7 @@ nav {
 
     .img_rest{
         width: 80%;
+        max-height: 300px;
         height: auto;
     }
 
