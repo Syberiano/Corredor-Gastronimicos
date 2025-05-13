@@ -188,15 +188,10 @@ select {
     padding: 1rem;
     font-size: 2rem;
     font-family: var(--fuenteSecundaria);
-    color: var(--colorPrimario);
-    background-color: var(--botones);
-    border: none;
+    border: var(--botones) 2px solid;
     border-radius: 5px;
 }
-select:hover {
-    background-color: var(--hoover);
-    cursor: pointer;
-}
+
 .main_buscador{
     display: flex;
     justify-content: center;
